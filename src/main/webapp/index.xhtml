@@ -24,42 +24,62 @@
                 <p:panel id="panel" header="Bienvenido" style="margin-bottom:10px;">  
                     <p:messages id="messages" />  
                     <h:panelGrid columns="2">  
-                        <h:outputLabel for="name" value="Digite la Expresion" /><br/><br/>
-                        <p:inputText id="txtpantalla" required="false" disabled="true"/>  
+                        <h:outputLabel for="txtpantalla" value="Digite la Expresion" /><br/><br/>
+                        <p:inputText id="txtpantalla" required="false" value="#{calculadoraBean.expresion}">
+                        </p:inputText>
   
                           <br/><br/>
                           
                                                     
                     </h:panelGrid>  
-                    
-                    
-                    
-                    <input type="button" value="(" style="width:40px; height:40px" name="botonAbreParentesis"/>
-                        <input type="button" value=")" style="width:40px; height:40px" name="botonCierraParentesis" />
-                        <input type="button" value="^" style="width:40px; height:40px" name="botonPotencia" />
-                        <input type="button" value="√" style="width:40px; height:40px" name="botonRaiz" /><br/>
-                        <input type="button" value="7" style="width:40px; height:40px" name="botonSiete" />
-                        <input type="button" value="8" style="width:40px; height:40px" name="botonOcho" />
-                        <input type="button" value="9" style="width:40px; height:40px" name="botonNueve" />
-                        <input type="button" value="÷" style="width:40px; height:40px" name="botonDividir" /><br/>
-                        <input type="button" value="4" style="width:40px; height:40px" name="botonCuatro" />
-                        <input type="button" value="5" style="width:40px; height:40px" name="botonCinco" />
-                        <input type="button" value="6" style="width:40px; height:40px" name="botonSeis" />
-                        <input type="button" value="x" style="width:40px; height:40px" name="botonMultiplicar" /><br/>
-                        <input type="button" value="1" style="width:40px; height:40px" name="botonUno" />
-                        <input type="button" value="2" style="width:40px; height:40px" name="botonDos" />
-                        <input type="button" value="3" style="width:40px; height:40px" name="botonTres" />
-                        <input type="button" value="-" style="width:40px; height:40px" name="botonRestar" /><br/>
-                        <input type="button" value="0" style="width:40px; height:40px" name="botonCero" />
-                        <input type="button" value="." style="width:40px; height:40px" name="botonPunto" />
-                        <input type="button" value="ce" style="width:40px; height:40px" name="botonBorrar" />
-                        <input type="button" value="+" style="width:40px; height:40px" name="botonSumar" /><br/>
+                    <p:commandButton value="  (  " style="width: 50px" update="txtpantalla" id="abreParentesis" actionListener="#{calculadoraBean.actualizaExpresion('(')}"
+                                         styleClass="ui-priority-primary"></p:commandButton>
+                    <p:commandButton value="  )  " style="width: 50px" update="txtpantalla" id="cierraParentesis" actionListener="#{calculadoraBean.actualizaExpresion(')')}"
+                                         styleClass="ui-priority-primary"></p:commandButton>
+                    <p:commandButton value="  ^  " style="width: 50px" update="txtpantalla" id="potencia" actionListener="#{calculadoraBean.actualizaExpresion('^')}"
+                                         styleClass="ui-priority-primary"></p:commandButton>
+                    <p:commandButton value="  √  " style="width: 50px" update="txtpantalla" id="raiz" actionListener="#{calculadoraBean.actualizaExpresion('√')}"
+                                         styleClass="ui-priority-primary"></p:commandButton><br/>
+                    <p:commandButton value="  7  " style="width: 50px" update="txtpantalla" id="siete" actionListener="#{calculadoraBean.actualizaExpresion('7')}"
+                                         styleClass="ui-priority-primary"></p:commandButton>
+                    <p:commandButton value="  8  " style="width: 50px" update="txtpantalla" id="ocho" actionListener="#{calculadoraBean.actualizaExpresion('8')}"
+                                         styleClass="ui-priority-primary"></p:commandButton>
+                    <p:commandButton value="  9  " style="width: 50px" update="txtpantalla" id="nueve" actionListener="#{calculadoraBean.actualizaExpresion('9')}"
+                                         styleClass="ui-priority-primary"></p:commandButton>
+                    <p:commandButton value="  ÷  " style="width: 50px" update="txtpantalla" id="division" actionListener="#{calculadoraBean.actualizaExpresion('÷')}"
+                                         styleClass="ui-priority-primary"></p:commandButton><br/>
+                    <p:commandButton value="  4  " style="width: 50px" update="txtpantalla" id="cuatro" actionListener="#{calculadoraBean.actualizaExpresion('7')}"
+                                         styleClass="ui-priority-primary"></p:commandButton>
+                    <p:commandButton value="  5  " style="width: 50px" update="txtpantalla" id="cinco" actionListener="#{calculadoraBean.actualizaExpresion('8')}"
+                                         styleClass="ui-priority-primary"></p:commandButton>
+                    <p:commandButton value="  6  " style="width: 50px" update="txtpantalla" id="seis" actionListener="#{calculadoraBean.actualizaExpresion('9')}"
+                                         styleClass="ui-priority-primary"></p:commandButton>
+                    <p:commandButton value="  x  " style="width: 50px" update="txtpantalla" id="multiplicacion" actionListener="#{calculadoraBean.actualizaExpresion('x')}"
+                                         styleClass="ui-priority-primary"></p:commandButton><br/>
+                    <p:commandButton value="  1  " style="width: 50px" update="txtpantalla" id="uno" actionListener="#{calculadoraBean.actualizaExpresion('1')}"
+                                         styleClass="ui-priority-primary"></p:commandButton>
+                    <p:commandButton value="  2  " style="width: 50px" update="txtpantalla" id="dos" actionListener="#{calculadoraBean.actualizaExpresion('2')}"
+                                         styleClass="ui-priority-primary"></p:commandButton>
+                    <p:commandButton value="  3  " style="width: 50px" update="txtpantalla" id="tres" actionListener="#{calculadoraBean.actualizaExpresion('3')}"
+                                         styleClass="ui-priority-primary"></p:commandButton>
+                    <p:commandButton value="  -  " style="width: 50px" update="txtpantalla" id="menos" actionListener="#{calculadoraBean.actualizaExpresion('-')}"
+                                         styleClass="ui-priority-primary"></p:commandButton><br/>
+                    <p:commandButton value="  0  " style="width: 50px" update="txtpantalla" id="cero" actionListener="#{calculadoraBean.actualizaExpresion('0')}"
+                                         styleClass="ui-priority-primary"></p:commandButton>
+                    <p:commandButton value="  .  " style="width: 50px" update="txtpantalla" id="punto" actionListener="#{calculadoraBean.actualizaExpresion('.')}"
+                                         styleClass="ui-priority-primary"></p:commandButton>
+                    <p:commandButton value="  CE " style="width: 50px" update="txtpantalla" id="limpia" actionListener="#{calculadoraBean.limpiaExpresion()}"
+                                         styleClass="ui-priority-primary"></p:commandButton>
+                    <p:commandButton value="  +  " style="width: 50px" update="txtpantalla" id="mas" actionListener="#{calculadoraBean.actualizaExpresion('+')}"
+                                         styleClass="ui-priority-primary"></p:commandButton><br/>
+                    <p:commandButton value="  =  " style="width: 100px;" update="messages" id="igual" actionListener="#{calculadoraBean.resultado()}"
+                                         styleClass="ui-priority-primary"></p:commandButton>
                         <br/>
                         <br/>
                         
                         
                 <p:outputLabel for="extended" value="Digite su Resultado" />  <br/>
-                        <p:inputText id="extended" required="false" />
+                <p:inputText id="extended" required="false" value="#{calculadoraBean.resultadoDigitado}" />
                         
                 </p:panel>  
   
@@ -73,7 +93,7 @@
                 
             
                 <p:scrollPanel style="width:250px;height:200px">
-                    <p:inputTextarea rows="16" cols="43" disabled="true"/>
+                    <p:inputTextarea rows="16" cols="43" disabled="true" id="tHistorial"/>
                 </p:scrollPanel>
             
  
